@@ -1,0 +1,9 @@
+1. At least two for loops will be needed, as the map needs to be checked for every bear in the river to determine if they ate something that day or not, and adding new babies to the map has to be done by a for loop to place them randomly in the river.
+
+2. River.place_baby() will increase the values of self.animals, self.population, and self.river, while River.animal_death() will decrease these values by the amount of animals that have died.
+
+3. When an animal dies, Animal.death() will call River.animal_death() to subtract one from the population for accuracy. Animal.collision() will check for what it has collided with, and if a bear or fish collides with the other, Bear.consume() is called, which deletes the fish and is used for other values of the bear.
+
+4. Bear.eaten_today checks if the bear has eaten something that day, and if it hasn't, it will call Bear.starve(), which will subtract a life from Bear.lives. Bear.max_lives is the maximum amount that Bear.lives can reach so that it doesn't go over the limit.
+
+5. The two changes that must be made is that the initial tile the animal was in becomes empty, and the new spot they're moving to is replaced with the animals icon. If two of the same animal collide, the board should not be redrawn as it will make the display of the river look weird. The alternative to this is to keep them in their spots and create a new bear.
